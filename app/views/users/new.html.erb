@@ -1,0 +1,41 @@
+
+<div id="area_signup">
+   <%= error_messages_for :user, :header_message => "Hay errores que impiden guardar el registro", :message => "Compruebe los siguientes campos:" %>
+   <% form_for :user, :url => users_path, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
+        <p>
+            <strong class="fontbigger">Sign up</strong><br /><br/>
+         </p>
+        <p>
+            <span class="fontsmaller">Already registered? <%= link_to "Click here to login", login_path %>.</span>  
+        </p>
+        <dl class="cols clearfix">
+            <% unless config["plugins.tog_user.email_as_login"] %>
+              <dt><label for="email">Login</label></dt>
+              <dd><%= f.text_field :login, :class => "textfield wide", :size => "40" %></dd>
+            <% end %>
+
+            <dt><label for="email">Email</label></dt>
+            <dd><%= f.text_field :email, :class => "textfield wide", :size => "40" %></dd>
+
+            <dt><label for="pass">Password</label></dt>
+            <dd><%= f.password_field :password, :class => "textfield wide", :size => "40" %></dd>
+
+            <dt><label for="repass">Repeat password</label></dt>
+            <dd><%= f.password_field :password_confirmation, :class => "textfield wide", :size => "40" %></dd>
+
+            <% if config["plugins.tog_user.captcha_enabled"] %>
+               <dt><label for="code">Type the two words</label></dt>
+               <dd>
+                  <%= recaptcha_tags(:display =>{:lang => config["plugins.tog_core.language.default"]}) %>
+               </dd>
+            <% end %>
+
+            <dt>&nbsp;</dt>
+            <dd><div class="clearfix">
+                <%= submit_tag 'Sign up!', :class => "button", :style => "float: left; font-weight: bold; font-size: 1.2em; width:115px;" %>
+            </div>
+            </dd>
+
+        </dl>
+   <% end -%>
+</div>

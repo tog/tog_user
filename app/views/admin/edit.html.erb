@@ -1,0 +1,31 @@
+<%= error_messages_for :user %>
+<% form_for :user, :url => meta_user_update_path(@user), :html => {:id => "settings"} do |f| -%>
+  <h2>Update account</h2>
+  <fieldset>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <fieldset id="social-details">
+      <legend>Social Network</legend>
+      <label>Friends: <%= friends_list(@user) %></label>
+      <div class="group">
+         <label>Followers
+            <ul>
+               <% for profile in @user.profile.followers %>
+              <li><%= profile.full_name %></li>
+              <% end %>
+            </ul>
+         </label>
+         <label>Followings
+            <ul>
+               <% for profile in @user.profile.followings %>
+              <li><%= profile.full_name %></li>
+              <% end %>
+            </ul>
+         </label>
+      </div>
+    </fieldset>
+    <%= submit_tag 'Update account', {:accesskey => "s"} %>
+
+  </fieldset>
+<% end -%>

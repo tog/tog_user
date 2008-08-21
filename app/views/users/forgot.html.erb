@@ -1,0 +1,22 @@
+<div id="area_signup">
+   <%= error_messages_for :user, :header_message => "Hay errores que impiden enviar el recordatorio", :message => "Compruebe los siguientes campos:" %>
+   <% form_for :user, :url => forgot_path, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
+        <p>
+            <strong class="fontbigger">¿Olvidó su contraseña?</strong><br /><br/>
+            
+            <span class="fontsmaller">Tras enviar este formulario, recibirás un email en el cual habrá un enlace que deberás pulsar para cambiar la clave.</span>
+         </p>
+         <dl class="cols clearfix">
+            <dt><label for="email">Dirección de email</label></dt>
+            <dd><%= f.text_field :email, :class => "textfield wide", :size => "40" %></dd>
+
+            <dt>&nbsp;</dt>
+            <dd>
+              <div class="clearfix">
+                <%= submit_tag 'Solicitar', :class => "button", :style => "float: left; font-weight: bold; font-size: 1.2em; width:115px;" %>
+              </div>
+            </dd>
+
+        </dl>
+   <% end -%>
+</div>

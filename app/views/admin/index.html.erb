@@ -1,0 +1,32 @@
+<h2>Users <%= link_to "Create New",  meta_user_new_url, {:class => "create button", :title => "Add an user"} %></h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">State</th>
+      <th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="5">
+      <%= will_paginate @users %>
+      </td>
+    </tr>
+  </tfoot>
+  <tbody>
+
+    <% @users.each do |user| %>
+
+    <tr<%= cycle('',' class="even"') -%>>
+      <td><%= link_to user.login, meta_user_edit_url(user), {:class => "admin", :title => "Edit user"} -%></td>
+      <td><%= mail_to user.email, user.email, {:title => "Email this user"} -%></td>
+      <td><%= user.state -%></td>
+      <td><%= user.created_at -%></td>
+    </tr>
+
+    <% end %>
+    
+  </tbody>
+</table>

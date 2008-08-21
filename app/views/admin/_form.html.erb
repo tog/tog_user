@@ -1,0 +1,22 @@
+    <fieldset id="login-details">
+      <legend>Login Details</legend>
+      <label>Login <%= f.text_field :login, {:size => nil} %></label>
+
+      <div class="group">
+          <label>Password <%= f.password_field :password, {:size => nil} %></label>
+          <label>Confirm Password <%= f.password_field :password_confirmation, {:size => nil} %></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label>Email Address  <%= f.text_field :email, {:size => nil} %></label>
+      <label><%= f.check_box :admin %> This user is a site admin.</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>State</legend>
+      <label>Actual state: <%= @user.current_state %> <br/><br/>
+          Action <%= select_tag "state_event", %{<option value="">None</option>#{options_for_select(@user.next_events_for_current_state.inject({}) {|s, e| s[e]=e; s}, @user.new_record? ? :passive : @user.current_state)}} %>
+      </label>
+    </fieldset>
