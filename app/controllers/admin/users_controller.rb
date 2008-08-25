@@ -1,6 +1,9 @@
 class Admin::UsersController < Admin::BaseController        
 
   before_filter :find_user
+  
+  helper :core
+  
 
   def index
     @users = User.paginate :per_page => 20, :page => params[:page], :order => 'login'

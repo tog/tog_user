@@ -14,3 +14,7 @@ denied   '/denied',   :controller => 'authorization',    :action => 'denied'
 reset    '/reset/:reset_code',          :controller => 'users', :action => 'reset'
 activate '/activate/:activation_code',  :controller => 'users', :action => 'activate'
 resend_activation '/resend_activation', :controller => 'users', :action => 'resend_activation'
+
+namespace(:admin) do |admin| 
+  admin.resources :users
+end
