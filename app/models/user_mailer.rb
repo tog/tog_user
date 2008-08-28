@@ -2,20 +2,20 @@ class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
     @subject     = (@subject || "") + 'Please activate your account'
-    @body[:url]  = activate_url(user.activation_code)
+#    @body[:url]  = activate_url(user.activation_code)
 
   end
 
   def activation(user)
     setup_email(user)
     @subject     = (@subject || "") + 'Your account has been activated!'
-    @body[:url]  = root_url
+#    @body[:url]  = root_url
   end
 
   def reset_notification(user)
     setup_email(user)
     @subject     = (@subject || "") + 'Reset your password'
-    @body[:url]  = reset_url(user.password_reset_code)
+#    @body[:url]  = reset_url(user.password_reset_code)
   end
 
   protected
