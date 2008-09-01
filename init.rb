@@ -9,3 +9,5 @@ Tog::Plugins.settings :tog_user,  :captcha_enabled                  => false,
                                   :default_redirect_on_activation   => "/",
                                   :default_redirect_on_forgot       => "/",
                                   :default_redirect_on_reset        => "/"
+
+require "acts_as_state_machine_patch"
