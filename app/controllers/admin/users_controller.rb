@@ -20,7 +20,7 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new(params[:user])
     @user.make_activation_code
     @user.save!
-    redirect_to(meta_user_index_url)
+    redirect_to(admin_users_url)
     flash[:notice] = "User #{@user.login} created successfully!"
   rescue ActiveRecord::RecordInvalid
     flash[:notice] = "Some error prohibited to save this user"
@@ -34,7 +34,7 @@ class Admin::UsersController < Admin::BaseController
     @user.send(%{#{params[:state_event]}!}) unless params[:state_event].blank?
     @user.admin = params[:user][:admin]
     @user.update_attributes!(params[:user])
-    redirect_to(meta_user_index_url)
+    redirect_to(admin_users_url)
     flash[:notice] = "User #{@user.login} updated successfully!"
   rescue ActiveRecord::RecordInvalid
     flash[:notice] = "Some error prohibited to update this user"
