@@ -2,18 +2,18 @@
    <%= error_messages_for :user, :header_message => "Hay errores que impiden enviar el recordatorio", :message => "Compruebe los siguientes campos:" %>
    <% form_for :user, :url => forgot_path, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
         <p>
-            <strong class="fontbigger">¿Olvidó su contraseña?</strong><br /><br/>
+            <strong class="fontbigger">Forgot your password?</strong><br /><br/>
             
-            <span class="fontsmaller">Tras enviar este formulario, recibirás un email en el cual habrá un enlace que deberás pulsar para cambiar la clave.</span>
+            <span class="fontsmaller">After sending this form, you will receive an email with instructions for reseting your password.</span>
          </p>
          <dl class="cols clearfix">
-            <dt><label for="email">Dirección de email</label></dt>
+            <dt><label for="email">Your email address</label></dt>
             <dd><%= f.text_field :email, :class => "textfield wide", :size => "40" %></dd>
 
             <dt>&nbsp;</dt>
             <dd>
               <div class="clearfix">
-                <%= submit_tag 'Solicitar', :class => "button", :style => "float: left; font-weight: bold; font-size: 1.2em; width:115px;" %>
+                <%= submit_tag 'Send', :class => "button", :style => "float: left; font-weight: bold; font-size: 1.2em; width:115px;" %>
               </div>
             </dd>
 

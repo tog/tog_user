@@ -18,3 +18,11 @@ resend_activation '/resend_activation', :controller => 'users', :action => 'rese
 namespace(:admin) do |admin| 
   admin.resources :users
 end
+
+namespace(:member) do |member|
+  member.with_options(:controller => 'users') do |user|
+    user.my_account  '/account',  :action => 'my_account'
+    user.destroy_account  '/destroy',  :action => 'destroy'
+    user.change_password  '/change_password',  :action => 'change_password', :conditions => { :method => :post }
+  end
+end

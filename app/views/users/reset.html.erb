@@ -2,21 +2,21 @@
    <%= error_messages_for :user, :header_message => "Hay errores que impiden cambiar el password", :message => "Compruebe los siguientes campos:" %>
    <% form_for :user, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
         <p>
-            <strong class="fontbigger">Cambiar tu contraseña</strong><br /><br/>
+            <strong class="fontbigger">Change your password</strong><br /><br/>
             
-            <span class="fontsmaller">Introduce tu nueva contraseña.</span>
+            <span class="fontsmaller">Enter your new password.</span>
          </p>
          <dl class="cols clearfix">
-           <dt><label for="email">Contraseña</label></dt>
-           <dd><%= f.password_field :password, :class => "textfield wide", :size => "40" %></dd>
+           <dt><label for="email">New password</label></dt>
+           <dd><%= f.password_field :password, :class => "textfield", :size => "40" %></dd>
 
-           <dt><label for="email">Repetir Contraseña</label></dt>
-           <dd><%= f.password_field :password_confirmation, :class => "textfield wide", :size => "40" %></dd>
+           <dt><label for="email">Repeat your new password</label></dt>
+           <dd><%= f.password_field :password_confirmation, :class => "textfield", :size => "40" %></dd>
 
             <dt>&nbsp;</dt>
             <dd>
               <div class="clearfix">
-                <%= submit_tag 'Cambiar', :class => "button", :style => "float: left; font-weight: bold; font-size: 1.2em; width:115px;" %>
+                <%= submit_tag 'Reset', :class => "button", :style => "float: left; font-weight: bold; font-size: 1.2em; width:115px;" %>
               </div>
             </dd>
 
