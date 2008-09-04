@@ -13,3 +13,5 @@ Tog::Plugins.settings :tog_user,  :captcha_enabled                  => false,
 require "acts_as_state_machine_patch"
 
 Tog::Plugins.observers << :user_observer
+
+Tog::Interface.sections(:admin).add "Users", "/admin/users"          
