@@ -48,8 +48,6 @@ class User < ActiveRecord::Base
     transitions :from => :suspended, :to => :pending, :guard => Proc.new {|u| !u.activation_code.blank? }
     transitions :from => :suspended, :to => :passive
   end
-
-  before_create :create_profile
   
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(login, password)
@@ -155,22 +153,6 @@ class User < ActiveRecord::Base
     @activated = true
     self.activated_at = Time.now.utc
     self.deleted_at = self.activation_code = nil
-    setup_active_user_infraestructure
   end
 
-  def create_profile
-    self.profile ||= Profile.new
-  end
-  def setup_active_user_infraestructure
-    setup_message_folders
-  end
-  def setup_message_folders
-    Tog::Config["plugins.tog_mail.messages.default_folders"].each(" "){|folder_type|
-      folder_type.strip!
-      Folder.new(:name => folder_type,
-      :deletable => false,
-      :folder_type => folder_type,
-      :user => self).save! 
-    } if Tog::Config["plugins.tog_mail.messages.default_folders"]
-  end
 end
