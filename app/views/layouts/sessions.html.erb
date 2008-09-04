@@ -1,42 +1,159 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Tog: Community Platform</title>
-    
-    <link rel="icon" href="/images/favicon.ico" />
-    
-    <link href="/tog_core/stylesheets/template.css" rel="stylesheet" media="screen" type="text/css" />
-    <link href="/tog_core/stylesheets/style.css"    rel="stylesheet" media="screen" type="text/css" />
-    <link href="/tog_core/stylesheets/pages.css"    rel="stylesheet" media="screen" type="text/css" />
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>tog</title>
+<meta name="language" content="en" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="title" content="tog"/>
+<meta name="title" content="tog" />
+<meta name="description" content="XXXXX XXXX XXXX" />
+<meta name="keywords" content="xxx, xxxxxx, xxxx" />
+<meta name="author" content="Linking Paths" />
 
-    <!--[if lt IE 7.]>
-    <link rel="stylesheet" type="text/css" media="screen" href="/tog_core/stylesheets/ie6.css" />
-    <![endif]--> 
+<link rel="icon" href="/images/favicon.ico" />
 
-    <!--[if IE 7]>
-    <link rel="stylesheet" type="text/css" media="screen" href="/tog_core/stylesheets/ie7.css" />
-    <![endif]-->
+<link href="/tog_core/stylesheets/template.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/tog_core/stylesheets/style.css"    rel="stylesheet" media="screen" type="text/css" />
+<link href="/tog_core/stylesheets/pages.css"    rel="stylesheet" media="screen" type="text/css" />
 
-    <script type="text/javascript">
-    // <![CDATA[
-        if(navigator.userAgent.indexOf('Mac') != -1) document.write ('<link rel="stylesheet" type="text/css" media="screen" href="/tog_core/stylesheets/mac.css" />');    
-    // ]]>	
-    </script>
+<!--[if lt IE 7.]>
+<link rel="stylesheet" type="text/css" media="screen" href="/tog_core/stylesheets/ie6.css" />
+<![endif]--> 
 
-    <%= inject_autodiscovery %>
-    <%= inject_js %>
-    <%= inject_css %>
-    
-  </head>
-  
-  <body>
-      <p><%= flash[:notice] %></p>
-      
-      <div id="container_forms">
-         <%= yield %>
-      </div>
-      
-      <  %= google_analytics_code %>
-  </body>
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" media="screen" href="/tog_core/stylesheets/ie7.css" />
+<![endif]-->
+
+<script type="text/javascript">
+// <![CDATA[
+    if(navigator.userAgent.indexOf('Mac') != -1) document.write ('<link rel="stylesheet" type="text/css" media="screen" href="/tog_core/stylesheets/mac.css" />');    
+// ]]>	
+</script>
+
+<%= inject_autodiscovery %>
+<%= inject_js %>
+<%= inject_css %>
+
+
+<link rel="start" type="text/html" href="/" title="Página de inicio" />
+
+</head>
+
+<body>
+    <div id="container">
+        
+        <div id="header" class="clearfix">
+            <div id="header_content">
+                <h1 id="logo"><a href="/">toginstallation.com</a></h1>
+
+                <div id="header_options">
+                    <ul>
+												<%if logged_in? -%>
+													<li><%=current_user.login%></li>
+                        	<li><a href="#">My info</a></li>
+                        	<li class="last"><a href="/logout">Log-out</a></li>
+												<%else -%>
+                      		<li><a href="/signup">Sign up</a></li>
+                      		<li class="last"><a href="/login">Log-in</a></li>												
+												<%end -%>
+                    </ul>
+                </div> <!-- /#header_options -->
+
+
+                <div id="menu" class="clearfix">
+                        <ul>
+                            <li class="on"><a href="#">Profile</a></li>
+                            <li><a href="#">Messages</a></li>
+                            <li><a href="#">Fotos</a></li>
+                        </ul>
+                </div>  <!-- #menu -->
+
+                <div id="header_search">
+                    <form name="global_search" id="global_search" action="seach">
+                        <label for="global_search_field">Search</label>
+                        <input type="text" name="global_search_field" id="global_search_field" value="Y un buscador..." class="fieldbox" />
+                        <input type="submit" value="Go" class="button" />
+                    </form>                            
+                </div> <!-- /#header_search -->    
+
+            </div> <!-- /#header_content -->
+        </div>  <!-- /#header -->
+        
+        <div id="menu2">
+            <ul>
+                <li class="on"><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+            
+        </div> <!-- /#menu2 -->
+        
+        <div id="pagebody">
+            
+            <%= render_flash_messages %>
+
+
+			      <div id="container_forms">
+			         <%= yield %>
+			      </div>
+
+        </div><!-- /#pagebody -->
+
+        <div id="footer" class="clearfix">
+             <span class="copyright"><strong>toginstallation.com © 2008</strong></span>
+             <span class="links"><a href="#">Acerca de</a> <a href="#">Condiciones de uso</a> <a href="#">Privacidad del sitio</a></span>
+        </div>  <!-- /#footer -->     
+             
+        <div id="footerlogged" class="clearfix">
+             <div class="copyright">
+                 <strong>toginstallation.com © 2008</strong>
+                 <br />
+                 This site is powered by the mighty Tog Platform 0.1.6 &quot;Ganimedes&quot;
+             </div>
+             <div class="links">
+                 <ul class="clearfix">
+                     <li>Tu actividad
+                         <ul>
+                             <li><a href="#">Fotos que has subido</a></li>
+                             <li><a href="#">Videos referenciados</a></li>
+                             <li><a href="#">Comentarios</a></li>
+                         </ul>
+                     </li>
+                     <li>Explora
+                         <ul>
+                             <li><a href="#">Últimas fotos subidas</a></li>
+                             <li><a href="#">Busca a tus amigos</a></li>
+                             <li><a href="#">Los grupos + activos</a></li>
+                         </ul>
+                     </li>
+                     <li>Ayuda
+                         <ul>
+                             <li><a href="#">Acerca del sitio</a></li>
+                             <li><a href="#">Foro de ayuda</a></li>
+                             <li><a href="#">Condiciones de uso</a></li>
+                             <li><a href="#">Privacidad del sitio</a></li>
+                         </ul>
+                     </li>
+                     <li>Another header
+                         <ul>
+                             <li><a href="#">More footer links</a></li>
+                             <li><a href="#">Referenced links here</a></li>
+                             <li><a href="#">More copy here too</a></li>
+                         </ul>
+                     </li>
+                     <li>Another one
+                         <ul>
+                             <li><a href="#">Últimas fotos subidas</a></li>
+                             <li><a href="#">Busca a tus amigos</a></li>
+                             <li><a href="#">Los grupos + activos</a></li>
+                         </ul>
+                     </li>
+                 </ul>
+             </div>
+        </div>  <!-- /#footerlogged -->          
+        
+    </div> <!-- #container -->
+</body>
 </html>

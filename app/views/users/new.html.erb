@@ -11,17 +11,17 @@
         <dl class="cols clearfix">
             <% unless config["plugins.tog_user.email_as_login"] %>
               <dt><label for="email">Login</label></dt>
-              <dd><%= f.text_field :login, :class => "textfield wide", :size => "40" %></dd>
+              <dd><%= f.text_field :login, :class => "textfield", :size => "40" %></dd>
             <% end %>
 
             <dt><label for="email">Email</label></dt>
-            <dd><%= f.text_field :email, :class => "textfield wide", :size => "40" %></dd>
+            <dd><%= f.text_field :email, :class => "textfield", :size => "40" %></dd>
 
             <dt><label for="pass">Password</label></dt>
-            <dd><%= f.password_field :password, :class => "textfield wide", :size => "40" %></dd>
+            <dd><%= f.password_field :password, :class => "textfield", :size => "40" %></dd>
 
             <dt><label for="repass">Repeat password</label></dt>
-            <dd><%= f.password_field :password_confirmation, :class => "textfield wide", :size => "40" %></dd>
+            <dd><%= f.password_field :password_confirmation, :class => "textfield", :size => "40" %></dd>
 
             <% if config["plugins.tog_user.captcha_enabled"] %>
                <dt><label for="code">Type the two words</label></dt>
