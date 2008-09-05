@@ -28,7 +28,7 @@
 <script type="text/javascript">
 // <![CDATA[
     if(navigator.userAgent.indexOf('Mac') != -1) document.write ('<link rel="stylesheet" type="text/css" media="screen" href="/tog_core/stylesheets/mac.css" />');    
-// ]]>	
+// ]]>  
 </script>
 
 <%= inject_autodiscovery %>
@@ -49,14 +49,14 @@
 
                 <div id="header_options">
                     <ul>
-												<%if logged_in? -%>
-													<li>Hello <%=current_user.login%></li>
-                        	<li><%= link_to 'My info', member_dashboard_path%></li>
-                        	<li class="last"><a href="/logout">Log-out</a></li>
-												<%else -%>
-                      		<li><a href="/signup">Sign up</a></li>
-                      		<li class="last"><a href="/login">Log-in</a></li>												
-												<%end -%>
+                        <%if logged_in? -%>
+                          <li>Hello <%=current_user.login%></li>
+                          <li><%= link_to 'My info', member_dashboard_path%></li>
+                          <li class="last"><a href="/logout">Log-out</a></li>
+                        <%else -%>
+                          <li><a href="/signup">Sign up</a></li>
+                          <li class="last"><a href="/login">Log-in</a></li>                       
+                        <%end -%>
                     </ul>
                 </div> <!-- /#header_options -->
 
@@ -89,13 +89,21 @@
         </div> <!-- /#menu2 -->
         
         <div id="pagebody">
-            
+
             <%= render_flash_messages %>
 
+            <div class="col_60_40 clearfix">
+              <div class="left_col">
 
-			      <div id="container_forms">
-			         <%= yield %>
-			      </div>
+                <%= yield %>
+
+              </div> <!-- /.left_col -->
+              <div class="right_col">
+
+                <%= yield :sidebar %>
+
+              </div> <!-- /.right_col -->
+            </div> <!-- /.col_60_40 -->
 
         </div><!-- /#pagebody -->
 
