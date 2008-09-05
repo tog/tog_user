@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     # reset_session
     @user = User.new(params[:user])
     @user.login ||= @user.email if Tog::Config["plugins.tog_user.email_as_login"]
-    @user.build_profile(params[:profile])
     
     captcha_validated = Tog::Config["plugins.tog_user.captcha_enabled"] ? verify_recaptcha(@user) : true
     
