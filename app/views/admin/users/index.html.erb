@@ -1,5 +1,5 @@
-<h2>Users <%= link_to "Create New",  new_admin_user_url, {:class => "create button", :title => "Add an user"} %></h2>
-<table>
+<h2>Users <%= link_to "Create New",  new_admin_user_url, {:class => "button add", :title => "Add an user"} %></h2>
+<table class="tableB">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -10,7 +10,7 @@
   </thead>
   <tfoot>
     <tr>
-      <td colspan="5">
+      <td colspan="4">
       <%= will_paginate @users %>
       </td>
     </tr>
@@ -19,8 +19,8 @@
 
     <% @users.each do |user| %>
 
-    <tr<%= cycle('',' class="even"') -%>>
-      <td><%= link_to user.login, edit_admin_user_url(user), {:class => "admin", :title => "Edit user"} -%></td>
+    <tr<%= cycle(' class="pair"','') -%>>
+      <td><strong><%= link_to user.login, edit_admin_user_url(user), {:title => "Edit user"} -%></strong></td>
       <td><%= mail_to user.email, user.email, {:title => "Email this user"} -%></td>
       <td><%= user.state -%></td>
       <td><%= user.created_at -%></td>
@@ -30,3 +30,15 @@
     
   </tbody>
 </table>
+<div class="info_results">
+    <span class="info_items">60 usuarios de 240 en la lista</span>
+    <span class="pages_navigation right">
+        <a href="#">&lt;Previous</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <strong>3</strong>
+        <a href="#">4</a>
+        <a href="#">Next&gt;</a>
+    </span>
+</div>
+
