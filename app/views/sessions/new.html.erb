@@ -1,18 +1,40 @@
-<% form_tag session_path do -%>
+<div class="titleB">Login</div>
 <p>
-<% if Tog::Config["system.user.email_as_login"] %>
-<label for="login">Email</label>
-<% else %>
-<label for="login">Login</label>
-<% end %>
-<br/>
-<%= text_field_tag 'login' %></p>
-
-<p><label for="password">Password</label><br/>
-<%= password_field_tag 'password' %></p>
-
-<p><%= check_box_tag 'remember_me' %><label for="remember_me"> Remember me</label>
+    <span class="fontsmaller">Create Your Account. <%= link_to "Click here to sign up", signup_path %>.</span>  
 </p>
 
-<p><%= submit_tag 'Sign in' %> | If you've forgotten your password, we can <%= link_to "email it to you", forgot_path %></p>
+<br />
+<% form_tag session_path do -%>
+  <fieldset>
+    <legend>Login details</legend>
+    <div class="fields">
+      <p>
+        <% if Tog::Config["system.user.email_as_login"] %>
+        <label for="login">Email</label>
+        <% else %>
+        <label for="login">Login</label>
+        <% end %>
+        <%= text_field_tag 'login', nil, :class => "fieldbox", :size => 40 %>
+      </p>
+    
+      <p><label for="password">Password</label>
+      <%= password_field_tag 'password', nil, :class => "fieldbox", :size => 40 %></p>
+    
+      <p><%= check_box_tag 'remember_me' %><label for="remember_me"> Remember me</label></p>
+    
+      <div class="actions">
+        <%= submit_tag 'Sign in', :class => "button mainaction" %> | If you've forgotten your password, we can <%= link_to "email it to you", forgot_path %>
+      </div>
+    </div>
+  </fieldset>
 <% end -%>
+
+
+<% content_for :sidebar do %>
+  <div class="portlet portletD" id="portlet_userWall">
+      <h2><span>En el muro de este usuario se habla de ... </span></h2>
+      <div class="portlet_content">
+          Dentro de las diferentes páginas tanto públicas como privadas necesitamos módulos, que hay que diseñar gráficamente, para poder incrustar funcionalidad de las diferentes extensiones, para que los desarrolladores puedan personalizar lo que tiene que aparecer en cada vista.
+      </div>
+  </div>
+<% end %>
