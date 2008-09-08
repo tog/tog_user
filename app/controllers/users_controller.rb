@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
     if logged_in? && !current_user.active?
       current_user.activate!
-      flash[:notice] = "Signup complete!"
+      flash[:ok] = "Signup complete!"
     end
     redirect_back_or_default(Tog::Config["plugins.tog_user.default_redirect_on_activation"])
   end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
         flash[:notice] = "We have send an email with instructions to reset your password to #{user.email}"
       else
-        flash[:notice] = "#{params[:user][:email]} doesn't have an account in this system"
+        flash[:error] = "#{params[:user][:email]} doesn't have an account in this system"
       end
       redirect_back_or_default(Tog::Config["plugins.tog_user.default_redirect_on_forgot"])
     end
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
       if @user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password_confirmation])
         @user.reset_password
         self.current_user = @user
-        flash[:notice] = "Password successfully updated for #{@user.email}"
+        flash[:ok] = "Password successfully updated for #{@user.email}"
         redirect_back_or_default(Tog::Config["plugins.tog_user.default_redirect_on_reset"])
       else
         render :action => :reset

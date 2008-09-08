@@ -11,9 +11,11 @@ class Member::UsersController < Member::BaseController
       if (params[:password] == params[:password_confirmation])
         current_user.password_confirmation = params[:password_confirmation]
         current_user.password = params[:password]
-        flash[:notice] = current_user.save ?
-              "Password changed" :
-              "Password not changed"
+        if current_user.save
+          flash[:ok] = "Password changed"
+        else
+          flash[:error] = "Password not changed"
+        end
       else
         flash[:error] = "New password mismatch. Please, confirm that you entered the same in 'password' and 'password confirmation'"
         @old_password = params[:old_password]
@@ -28,7 +30,7 @@ class Member::UsersController < Member::BaseController
     current_user.destroy
     cookies.delete :auth_token
     reset_session
-    flash[:notice] = "Your account has been destroyed. Thank you for using our site."
+    flash[:ok] = "Your account has been destroyed. Thank you for using our site."
     redirect_back_or_default('/')
   end
 
