@@ -1,11 +1,15 @@
+<div class="titleB">Create account</div>
+<br />
+
 <%= error_messages_for :user %>
 <% form_for :user, :url => admin_users_path,  :html => {:id => "settings"} do |f| -%>
-  <h2>Create account</h2>
-  <fieldset>
 
-    <%= render :partial => 'form', :locals => { :f => f } %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
 
-    <%= submit_tag 'Create account', {:accesskey => "s"} %>
+  <br />
 
-  </fieldset>
+  <div class="actions">
+    <%= submit_tag 'Create account', {:accesskey => "s", :class=>"button mainaction"} %>
+  </div>
+
 <% end -%>

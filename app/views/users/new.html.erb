@@ -7,7 +7,6 @@
 <%= error_messages_for :user, :header_message => "Hay errores que impiden guardar el registro", :message => "Compruebe los siguientes campos:" %>
 <% form_for :user, :url => users_path, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
   <fieldset>
-    <legend>Signup details</legend>
     <div class="fields">
       <p>
           <% unless config["plugins.tog_user.email_as_login"] %>
