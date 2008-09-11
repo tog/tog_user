@@ -26,16 +26,16 @@
 <br />
 
 <fieldset>
-    <legend>Personal information</legend>
-    <div class="fields">
-        <p>
-            <label for="user_email">Email address:</label>
-            <%= f.text_field :email, :class=>"fieldbox" %>
-        </p>
-        <p>
-            <label for="user_state_event">Actual state: <strong class="highlight"><%= @user.current_state %></strong></label>
-            Action <%= select_tag "state_event", %{<option value="">None</option>#{options_for_select(@user.next_events_for_current_state.inject({}) {|s, e| s[e]=e; s}, @user.new_record? ? :passive : @user.current_state)}} %>
-        </p>
-    </div> <!-- /.fields -->
+  <legend>Personal information</legend>
+  <div class="fields">
+    <p>
+      <label for="user_email">Email address:</label>
+      <%= f.text_field :email, :class=>"fieldbox" %>
+    </p>
+    <p>
+      <label for="user_state_event">Actual state: <strong class="highlight"><%= @user.current_state %></strong></label>
+      Action <%= select_tag "state_event", %{<option value="">None</option>#{options_for_select(@user.next_events_for_current_state.inject({}) {|s, e| s[e]=e; s}, @user.new_record? ? :passive : @user.current_state)}} %>
+    </p>
+  </div> <!-- /.fields -->
 </fieldset>
 

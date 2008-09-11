@@ -1,25 +1,26 @@
-<div id="area_signup">
-   <%= error_messages_for :user, :header_message => "Hay errores que impiden cambiar el password", :message => "Compruebe los siguientes campos:" %>
-   <% form_for :user, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
-        <p>
-            <strong class="fontbigger">Change your password</strong><br /><br/>
-            
-            <span class="fontsmaller">Enter your new password.</span>
-         </p>
-         <dl class="cols clearfix">
-           <dt><label for="email">New password</label></dt>
-           <dd><%= f.password_field :password, :class => "textfield", :size => "40" %></dd>
+<div class="titleB">Change your password</div>
+<p>
+    <span class="fontsmaller">Enter your new password.</span>
+</p>
+<br/>
 
-           <dt><label for="email">Repeat your new password</label></dt>
-           <dd><%= f.password_field :password_confirmation, :class => "textfield", :size => "40" %></dd>
-
-            <dt>&nbsp;</dt>
-            <dd>
-              <div class="clearfix">
-                <%= submit_tag 'Reset', :class => "button", :style => "float: left; font-weight: bold; font-size: 1.2em; width:115px;" %>
-              </div>
-            </dd>
-
-        </dl>
-   <% end -%>
-</div>
+<%= error_messages_for :user %>
+<% form_for :user, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
+<fieldset>
+  <div class="fields">
+    <p>
+      <label for="user_password">New password</label>
+      <%= f.password_field :password, :class => "fieldbox", :size => "40" %>
+    </p>
+    
+    <p>
+      <label for="user_password_confirmation">Repeat your new password</label>
+      <%= f.password_field :password_confirmation, :class => "fieldbox", :size => "40" %>
+    </p>
+    
+    <div class="actions">
+      <%= submit_tag 'Reset', :class => "button mainaction" %>
+    </div>
+  </div>
+</fieldset>
+<% end -%>

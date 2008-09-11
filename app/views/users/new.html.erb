@@ -4,7 +4,7 @@
 </p>
 
 <br />
-<%= error_messages_for :user, :header_message => "Hay errores que impiden guardar el registro", :message => "Compruebe los siguientes campos:" %>
+<%= error_messages_for :user %>
 <% form_for :user, :url => users_path, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
   <fieldset>
     <div class="fields">
@@ -45,13 +45,3 @@
   </div>
      
 <% end -%>
-
-
-<% content_for :sidebar do %>
-  <div class="portlet portletD" id="portlet_userWall">
-      <h2><span>En el muro de este usuario se habla de ... </span></h2>
-      <div class="portlet_content">
-          Dentro de las diferentes páginas tanto públicas como privadas necesitamos módulos, que hay que diseñar gráficamente, para poder incrustar funcionalidad de las diferentes extensiones, para que los desarrolladores puedan personalizar lo que tiene que aparecer en cada vista.
-      </div>
-  </div>
-<% end %>

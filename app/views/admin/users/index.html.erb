@@ -9,14 +9,16 @@
     </tr>
   </thead>
   <tfoot>
-    <tr class="info_results">
-      <td colspan="4">
-      <%= will_paginate @users %>
-      </td>
+    <tr>
+      <td colspan="4" class="info_results">
+        <span class="info_items"><%= page_entries_info @users %></span>
+        <span class="pages_navigation right">
+          <%= will_paginate @users, :container => false %>
+        </span>
+        </td>
     </tr>
   </tfoot>
   <tbody>
-
     <% @users.each do |user| %>
 
     <tr<%= cycle(' class="pair"','') -%>>
@@ -27,6 +29,5 @@
     </tr>
 
     <% end %>
-    
   </tbody>
 </table>
