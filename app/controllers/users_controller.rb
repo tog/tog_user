@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   layout "sessions"
 
-  helper :core
-  
-  def new
-  end
-
   def create
     # cookies.delete :auth_token
     # protects against session fixation attacks, wreaks havoc with 

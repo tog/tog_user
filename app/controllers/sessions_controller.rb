@@ -1,11 +1,6 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
   
-  helper :core
-  
-  def new
-  end
-
   def create
     self.current_user = User.authenticate(params[:login], params[:password])
     if logged_in?
@@ -28,4 +23,5 @@ class SessionsController < ApplicationController
     flash[:ok] = "You are now signed out."
     redirect_back_or_default(Tog::Config["plugins.tog_user.default_redirect_on_logout"])
   end
+
 end

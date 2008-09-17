@@ -2,15 +2,9 @@ class Admin::UsersController < Admin::BaseController
 
   before_filter :find_user
   
-  helper :core
-  
-
   def index
     @users = User.paginate :per_page => 20, :page => params[:page], :order => 'login'
   end
-
-  def show
-  end  
 
   def new       
     @user = User.new(params[:user])
@@ -27,9 +21,6 @@ class Admin::UsersController < Admin::BaseController
     render :action => 'new'
   end
 
-  def edit
-  end
-
   def update
     @user.send(%{#{params[:state_event]}!}) unless params[:state_event].blank?
     @user.admin = params[:user][:admin]
@@ -40,24 +31,6 @@ class Admin::UsersController < Admin::BaseController
     flash[:error] = "Some error prohibited to update this user"
     render :action => 'edit'
   end
-
-  #def activate
-  #  @user = User.find(params[:id])
-  #  @user.activate! 
-  #  render :action => 'show'
-  #end
-  #
-  #def suspend
-  #  @user = User.find(params[:id])
-  #  @user.suspend! 
-  #  render :action => 'show'
-  #end
-  #
-  #def unsuspend
-  #  @user = User.find(params[:id])
-  #  @user.unsuspend! 
-  #  render :action => 'show'
-  #end
 
   protected
 

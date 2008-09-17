@@ -2,9 +2,6 @@ class Member::UsersController < Member::BaseController
 
   before_filter :find_user
 
-  def my_account
-  end  
-
   def change_password
     return unless request.post?
     if User.authenticate(current_user.login, params[:old_password])
