@@ -3,7 +3,8 @@ Tog User
 
 Tog user management
 
-== Included functionality
+Included functionality
+-----------------------
 
 * Login, logout and signup processes
 * Password reminder
@@ -70,9 +71,9 @@ rake db:migrate
 More
 -------
 
-"https://github.com/tog/tog_social":https://github.com/tog/tog_user
+[http://github.com/tog/tog_social](http://github.com/tog/tog_user)
 
-"https://github.com/tog/tog_social/wikis":https://github.com/tog/tog_user/wikis
+[http://github.com/tog/tog_social/wikis](http://github.com/tog/tog_user/wikis)
 
 
 Copyright (c) 2008 Keras Software Development, released under the MIT license
