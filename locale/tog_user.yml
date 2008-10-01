@@ -1,0 +1,32 @@
+# {{xxx}}
+en-US:
+  tog_user:
+    plugin_title: User management
+
+    model: 
+      login_required: . Field ''login'' is mandatory
+      email_required: . Field ''email'' is mandatory
+      password_required: . Field ''password'' is mandatory
+      password_mismatch: . Password and its retyped copy must be identical
+      login_to_short: . Login is too short, it should be at least 3 characters long
+      login_in_use: . Login already in use
+      email_in_use: . Email already in use
+    user:
+      sign_up: Thanks for signing up!
+      sign_up_completed: Signup complete!
+      activation_resent: We have resend the activation message. Please, follow the instructions detailed in it.
+      password_updated: Password successfully updated for {{email}}
+      password_reset_sent: We have send an email with instructions to reset your password to {{email}}
+      password_reset_not_found: The {{email}} doesn''t have an account in this system
+    sessions:
+      login_failure: Incorrect username or password.
+      login_success: Logged in successfully.
+      sign_out: You are now signed out.
+    admin:
+      error_saving: Some error prohibited to save this user
+      user_created: User {{login}} created successfully!
+      user_updated: User {{login}} updated successfully!
+    mailer: 
+      account_activated: Your account has been activated!
+      activate_account: Please activate your account
+      reset_password: Reset your password

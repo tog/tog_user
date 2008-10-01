@@ -15,9 +15,9 @@ class Admin::UsersController < Admin::BaseController
     @user.make_activation_code
     @user.save!
     redirect_to(admin_users_url)
-    flash[:ok] = "User #{@user.login} created successfully!"
+    flash[:ok] = I18n.t("tog_user.admin.user_created", :login => @user.login)
   rescue ActiveRecord::RecordInvalid
-    flash[:error] = "Some error prohibited to save this user"
+    flash[:error] = @title = I18n.t("tog_user.admin.error_saving")
     render :action => 'new'
   end
 
@@ -26,9 +26,9 @@ class Admin::UsersController < Admin::BaseController
     @user.admin = params[:user][:admin]
     @user.update_attributes!(params[:user])
     redirect_to(admin_users_url)
-    flash[:ok] = "User #{@user.login} updated successfully!"
+    flash[:ok] = I18n.t("tog_user.admin.user_updated", :login => @user.login)
   rescue ActiveRecord::RecordInvalid
-    flash[:error] = "Some error prohibited to update this user"
+    flash[:error] = I18n.t("tog_user.admin.error_saving")
     render :action => 'edit'
   end
 
