@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
   before_filter :find_user
   
   def index
-    @users = User.paginate :per_page => 20, :page => params[:page], :order => 'login'
+    @users = User.paginate :per_page => Tog::Config['plugins.tog_core.pagination_size'], :page => params[:page], :order => 'login'
   end
 
   def new       
