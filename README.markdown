@@ -45,7 +45,7 @@ ruby script/generate migration install_tog_user
 	  with the following content:
 
 <pre>
-class InstallTogSocial < ActiveRecord::Migration
+class InstallTogUser < ActiveRecord::Migration
   def self.up
     migrate_plugin "tog_user", 1
   end
