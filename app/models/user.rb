@@ -131,6 +131,10 @@ class User < ActiveRecord::Base
     find :first, :conditions => ['email = ? and activation_code IS NULL', email]
   end
   
+  def self.site_search(query, search_options={})
+    find :all, :conditions => {:login => query}
+  end
+  
   protected
   # before filter
   def encrypt_password
