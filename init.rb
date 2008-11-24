@@ -2,7 +2,7 @@ require_plugin 'tog_core'
 require_plugin 'acts_as_state_machine'
 
 Dir[File.dirname(__FILE__) + '/locale/**/*.yml'].each do |file|
-  I18n.load_translations file
+  I18n.load_path << file
 end
 
 Tog::Plugins.settings :tog_user,  :captcha_enabled                  => false,
