@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email, :case_sensitive => false, :message => I18n.t("tog_user.model.email_in_use")
   before_save :encrypt_password  
   
+  named_scope :active, :conditions => {:state => 'active'}
 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
