@@ -1,5 +1,6 @@
 Edge
 ----
+* Site-Search integration.
 * Sync tog's i18n implementation with rails 2.2.2
 
 0.3.0

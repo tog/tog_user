@@ -133,7 +133,7 @@ class User < ActiveRecord::Base
   end
   
   def self.site_search(query, search_options={})
-    find :all, :conditions => {:login => query}
+    active.find :all, :conditions => ["login like :query", { :query => "%#{query}%" }]
   end
   
   protected
