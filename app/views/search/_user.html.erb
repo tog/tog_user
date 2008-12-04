@@ -1,0 +1,9 @@
+<%=link_to icon_for_profile(match.profile, 'small'), profile_path(match.profile)%> <%= match.profile.full_name %>
+
+<div class="portlet_content">
+    <ul>
+        <li><%= link_to 'Send a private message', member_new_message_to_path(match) %></li>
+        <li><%= report_abuse_link match %></li>
+        <li><%= following_options(match.profile) %></li>
+    </ul>
+</div>
