@@ -1,5 +1,8 @@
 Edge
 ----
+
+0.4.0
+----
 * Site-Search integration.
 * Sync tog's i18n implementation with rails 2.2.2
 * Only pending users should be displayed on the profiles section
