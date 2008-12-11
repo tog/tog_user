@@ -9,20 +9,20 @@
     <div class="fields">
       <p>
         <% if Tog::Config["system.user.email_as_login"] %>
-        <label for="login">Email</label>
+        <label for="login"><%= I18n.t("tog_user.sessions.email") %></label>
         <% else %>
-        <label for="login">Login</label>
+        <label for="login"><%= I18n.t("tog_user.sessions.login") %></label>
         <% end %>
         <%= text_field_tag 'login', nil, :class => "fieldbox", :size => 40 %>
       </p>
 
-      <p><label for="password">Password</label>
+      <p><label for="password"><%= I18n.t("tog_user.sessions.password") %></label>
       <%= password_field_tag 'password', nil, :class => "fieldbox", :size => 40 %></p>
 
-      <p><%= check_box_tag 'remember_me' %><label for="remember_me"> Remember me</label></p>
+      <p><%= check_box_tag 'remember_me' %><label for="remember_me"> <%= I18n.t("tog_user.sessions.remember_me") %></label></p>
 
       <div class="actions">
-        <%= submit_tag 'Sign in', :class => "button mainaction" %> | If you've forgotten your password, we can <%= link_to "email it to you", forgot_path %>
+        <%= submit_tag 'Sign in', :class => "button mainaction" %> | <%= I18n.t("tog_user.sessions.password_forgotten") %> <%= link_to "#{I18n.t('tog_user.sessions.email_you')}", forgot_path %> 
       </div>
     </div>
   </fieldset>
