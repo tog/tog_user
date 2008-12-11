@@ -2,6 +2,8 @@ Edge
 ----
 * Site-Search integration.
 * Sync tog's i18n implementation with rails 2.2.2
+* Only pending users should be displayed on the profiles section
+* fix restful-authentication with rails 2.2
 
 0.3.0
 ----
