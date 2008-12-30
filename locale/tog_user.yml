@@ -2,7 +2,6 @@
 en:
   tog_user:
     plugin_title: User management
-
     model: 
       login_required: . Field ''login'' is mandatory
       email_required: . Field ''email'' is mandatory
@@ -25,7 +24,6 @@ en:
       remember_me: Remember me
       password_forgotten: If you've forgotten your password, we can
       email_you: email it to you
-      
       login_failure: Incorrect username or password.
       login_success: Logged in successfully.
       sign_out: You are now signed out.
@@ -37,42 +35,3 @@ en:
       account_activated: Your account has been activated!
       activate_account: Please activate your account
       reset_password: Reset your password
-
-es:
-  tog_user:
-    plugin_title: User management
-
-    model: 
-      login_required: . El campo ''login'' es obligatorio
-      email_required: . El campo ''email'' es obligatorio
-      password_required: . El campo ''password'' es obligatorio
-      password_mismatch: . Contraseña y su copia deben ser idénticas
-      login_to_short: . Usuario demasiado corto, debería tener al menos 3 caracteres
-      login_in_use: . Usuario ya existe
-      email_in_use: . Correo electrónico en uso
-    user:
-      sign_up: Gracias por darte de alta!
-      sign_up_completed: Alta completa
-      activation_resent: Hemos reenviado el mensaje de activación. Por favor, sigue las instrucciones detalladas en él.
-      password_updated: Contraseña actualizada con éxitio para {{email}}
-      password_reset_sent: Hemos enviado un correo a {{email}} con instrucciones para cambiar tu contraseña.
-      password_reset_not_found: El {{email}} no tiene cuenta en este sistema
-    sessions:
-      email: Correo electrónico
-      login: Usuario
-      password: Contraseña
-      remember_me: Recuérdame
-      password_forgotten: Si has olvidado tu contraseña, podemos
-      email_you: enviártelo por email
-      
-      login_failure: Usuario o contraseña incorrectos.
-      login_success: Logado correctamente.
-      sign_out: Has abandonado la sessión.
-    admin:
-      error_saving: Algo ha sucedido que no permite grabar este usuario
-      user_created: Usuario {{login}} creado correctamente!
-      user_updated: Usuario {{login}} actualizado correctamente!
-    mailer: 
-      account_activated: Tu cuenta ha sido activada!
-      activate_account: Por favor activa tu cuenta
-      reset_password: Restablece tu contraseña
