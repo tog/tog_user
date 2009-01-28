@@ -43,10 +43,9 @@ class UsersController < ApplicationController
 
   def forgot
     if request.post?
-      user = User.find_by_email(params[:user][:email])
-      if user
-        user.forgot_password
-        flash[:notice] = I18n.t("tog_user.user.password_reset_sent", :email => user.email)
+      if @user = User.find_by_email(params[:user][:email])
+        @user.forgot_password
+        flash[:notice] = I18n.t("tog_user.user.password_reset_sent", :email => @user.email)
       else
         flash[:error] = I18n.t("tog_user.user.password_reset_not_found", :email => params[:user][:email])
       end
