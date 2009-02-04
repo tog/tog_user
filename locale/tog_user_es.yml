@@ -1,4 +1,9 @@
 es:
+  interface:
+    admin:
+      users: Usuarios
+    member:
+      my_account: Mi cuenta
   tog_user:
     plugin_name: User    
     plugin_title: Gestión de usuarios

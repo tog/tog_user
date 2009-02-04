@@ -1,5 +1,9 @@
-# {{xxx}}
 en:
+  interface:
+    admin:
+      users: Users
+    member:
+      my_account: My account
   tog_user:
     plugin_name: User
     plugin_title: User management
