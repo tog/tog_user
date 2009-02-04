@@ -1,11 +1,14 @@
-<p><%= link_to "Create New",  new_admin_user_url, {:class => "button add", :title => "Add an user"} %></p>
-<table class="tableB">
+<h1><%= I18n.t("tog_user.plugin_title") %></h1>
+
+<p><%= link_to I18n.t("tog_user.admin.create_user"),  new_admin_user_url, {:class => "button add", :title => I18n.t("tog_user.admin.create_user")} %></p>
+
+<table class="tableE">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Email Address</th>
-      <th scope="col">State</th>
-      <th scope="col">Created At</th>
+      <th scope="col"><%=I18n.t("tog_user.model.name")%></th>
+      <th scope="col"><%=I18n.t("tog_user.model.email")%></th>
+      <th scope="col"><%=I18n.t("tog_user.model.state")%></th>
+      <th scope="col"><%=I18n.t("tog_user.model.created_at")%></th>
     </tr>
   </thead>
   <tfoot>
@@ -20,14 +23,12 @@
   </tfoot>
   <tbody>
     <% @users.each do |user| %>
-
     <tr<%= cycle(' class="pair"','') -%>>
-      <td><strong><%= link_to user.login, edit_admin_user_url(user), {:title => "Edit user"} -%></strong></td>
-      <td><%= mail_to user.email, user.email, {:title => "Email this user"} -%></td>
+      <td><strong><%= link_to user.login, edit_admin_user_url(user), {:title => I18n.t("tog_user.admin.edit_user")} -%></strong></td>
+      <td><%= mail_to user.email, user.email, {:title => I18n.t("tog_user.admin.send_email")} -%></td>
       <td><%= user.state -%></td>
       <td><%= user.created_at -%></td>
     </tr>
-
     <% end %>
   </tbody>
 </table>

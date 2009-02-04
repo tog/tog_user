@@ -13,7 +13,11 @@ es:
       name: Nombre
       email: Correo electrónico
       state: Estado
-      created_at: Creado el      
+      created_at: Creado el
+      password: Contraseña
+      password_confirmation: Confirmar contraseña
+      change_password_explanation: Si quiere cambiar la contraseña de este usuario escriba aquí la nueva<br/>En caso contrario, déjelo en blanco.
+      admin_user: Este usuario es un administrador
     user:
       sign_up: Gracias por darte de alta!
       sign_up_completed: Alta completa
@@ -30,14 +34,20 @@ es:
       email_you: enviártela por email
       login_failure: Usuario o contraseña incorrectos.
       login_success: Autenticado correctamente.
-      sign_out: Has abandonado la sessión.
+      sign_out: Has abandonado la sesión.
     admin:
       error_saving: Ha sucedido algo que no permite grabar este usuario
       user_created: Usuario {{login}} creado correctamente!
       user_updated: Usuario {{login}} actualizado correctamente!
       create_user: Crear usuario  
       edit_user: Editar usuario
-      email_user: Enviar un email a este usuario          
+      email_user: Enviar un email a este usuario
+      update: Actualizar
+      create: Crear
+      create_account: Crear cuenta
+      login_details: Datos de acceso  
+      personal_details: Información personal
+      change: Cambiar                    
     mailer: 
       account_activated: Tu cuenta ha sido activada!
       activate_account: Por favor activa tu cuenta

@@ -1,14 +1,15 @@
-<div class="titleB">Update account</div>
+<h1><%= link_to I18n.t("tog_user.plugin_title"), admin_users_path%> / <%= @user.login %></h1>
+
 <br />
 
 <%= error_messages_for :user %>
-<% form_for :user, :url => admin_user_path(@user), :html => {:id => "settings", :method => :put} do |f| -%>
+<% form_for :user, :url => admin_user_path(@user), :html => {:id => "edit_user", :method => :put} do |f| -%>
   <%= render :partial => 'form', :locals => { :f => f } %>
 
   <br />
 
   <div class="actions">
-    <%= submit_tag 'Update account', {:accesskey => "s", :class=>"button mainaction"} %>
+    <%= submit_tag I18n.t("tog_user.admin.update"), {:accesskey => "s", :class=>"button"} %>
   </div>
 
 <% end -%>

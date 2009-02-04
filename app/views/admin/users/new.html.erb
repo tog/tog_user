@@ -1,4 +1,5 @@
-<div class="titleB">Create account</div>
+<h1><%= link_to I18n.t("tog_user.plugin_title"), admin_users_path%> / <%= I18n.t("tog_user.admin.create_account") %></h1>
+
 <br />
 
 <%= error_messages_for :user %>
@@ -9,7 +10,7 @@
   <br />
 
   <div class="actions">
-    <%= submit_tag 'Create account', {:accesskey => "s", :class=>"button mainaction"} %>
+    <%= submit_tag I18n.t("tog_user.admin.create"), {:accesskey => "s", :class=>"button"} %>
   </div>
 
 <% end -%>

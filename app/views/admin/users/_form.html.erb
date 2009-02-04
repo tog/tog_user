@@ -1,41 +1,43 @@
-<fieldset>
-  <legend>Login details</legend>
-  <div class="fields">
-    <p>
-      <label for="user_login">Login</label>
-      <%= f.text_field :login, :class=>"fieldbox" %>
-    </p>
-    <p>
-      <label for="user_password">Password</label>
-      <%= f.password_field :password, :class=>"fieldbox" %>
-    </p>
-    <p>
-      <label for="user_password_confirmation">Confirm Password</label>
-      <%= f.password_field :password_confirmation, :class=>"fieldbox" %>
-      <br />
-      <span class="helpinfo">If you want to change the user´s password write here the new one.<br />Otherwise, let them unchanged.</span>
-    </p>
-    <p>
-      <label for="user_admin" class="nolabel"><%= f.check_box :admin %> This user is a site admin.</label>
-    </p>
-  </div>
-</fieldset>
-
-<br />
-<hr />
-<br />
-
-<fieldset>
-  <legend>Personal information</legend>
-  <div class="fields">
-    <p>
-      <label for="user_email">Email address:</label>
-      <%= f.text_field :email, :class=>"fieldbox" %>
-    </p>
-    <p>
-      <label for="user_state_event">Actual state: <strong class="highlight"><%= @user.current_state %></strong></label>
-      Action <%= select_tag "state_event", %{<option value="">None</option>#{options_for_select(@user.next_events_for_current_state.inject({}) {|s, e| s[e]=e; s}, @user.new_record? ? :passive : @user.current_state)}} %>
-    </p>
-  </div> <!-- /.fields -->
-</fieldset>
-
+<table class="tableE">
+  <caption><%= I18n.t("tog_user.admin.login_details") %></caption>
+  <tbody>
+  <tr>
+      <th scope="row"><%=I18n.t("tog_user.model.name")%></th>
+      <td nowrap="nowrap"><%=f.text_field :login, :class=>"fieldbox" %></td>
+  </tr>
+  <tr>
+      <th scope="row"><%=I18n.t("tog_user.model.password")%></th>
+      <td nowrap="nowrap"><%= f.password_field :password, :class=>"fieldbox" %></td>
+  </tr>
+  <tr>
+      <th scope="row"><%=I18n.t("tog_user.model.password_confirmation")%></th>
+      <td nowrap="nowrap">
+        <%= f.password_field :password_confirmation, :class=>"fieldbox" %>
+        <br />
+        <span class="helpinfo"><%=I18n.t("tog_user.model.change_password_explanation")%></span>
+      </td>
+  </tr>     
+  <tr>
+      <th scope="row"></th>
+      <td nowrap="nowrap">
+        <%= f.check_box :admin %> <%=I18n.t("tog_user.model.admin_user")%>
+      </td>      
+  </tr>           
+</tbody></table>
+<table class="tableE">
+  <caption><%= I18n.t("tog_user.admin.personal_details") %></caption>
+  <tbody>
+  <tr>
+      <th scope="row"><%=I18n.t("tog_user.model.email")%></th>
+      <td nowrap="nowrap"><%= f.text_field :email, :class=>"fieldbox" %></td>
+  </tr>
+  <tr>
+      <th scope="row"><%=I18n.t("tog_user.model.state")%></th>
+      <td nowrap="nowrap">
+        <strong class="highlight"><%= @user.current_state %></strong>
+        <br/>
+        <%=I18n.t("tog_user.admin.change")%>:
+        <%= select_tag "state_event", %{<option value="">No</option>#{options_for_select(@user.next_events_for_current_state.inject({}) {|s, e| s[e]=e; s}, @user.new_record? ? :passive : @user.current_state)}} %>
+      </td>
+  </tr>        
+</tbody></table>
