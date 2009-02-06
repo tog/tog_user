@@ -34,10 +34,10 @@
   <tr>
       <th scope="row"><%=I18n.t("tog_user.model.state")%></th>
       <td nowrap="nowrap">
-        <strong class="highlight"><%= @user.current_state %></strong>
+        <strong class="highlight"><%= I18n.t("tog_user.model.states.#{@user.current_state}") %></strong>
         <br/>
         <%=I18n.t("tog_user.admin.change")%>:
-        <%= select_tag "state_event", %{<option value="">No</option>#{options_for_select(@user.next_events_for_current_state.inject({}) {|s, e| s[e]=e; s}, @user.new_record? ? :passive : @user.current_state)}} %>
+        <%= select_tag "state_event", options_for_select( ( @user.next_events_for_current_state.collect{ |x| [ I18n.t("tog_user.model.states.actions.#{x}"), x ] } ).insert(0, [ "No", '' ]), @user.new_record? ? :passive : @user.current_state ) %>
       </td>
   </tr>        
 </tbody></table>

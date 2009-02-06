@@ -23,6 +23,18 @@ es:
       password_confirmation: Confirmar contraseña
       change_password_explanation: Si quiere cambiar la contraseña de este usuario escriba aquí la nueva<br/>En caso contrario, déjelo en blanco.
       admin_user: Este usuario es un administrador
+      states:
+        passive: Nuevo
+        pending: Pendiente de activación
+        active: Activo
+        suspended: Suspendido
+        deleted: Eliminado
+        actions:
+          register: Registrar
+          activate: Activar
+          suspend: Suspender
+          delete: Eliminar
+          unsuspend: Reactivar    
     user:
       sign_up: Gracias por darte de alta!
       sign_up_completed: Alta completa

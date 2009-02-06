@@ -23,6 +23,18 @@ en:
       password_confirmation: Confirm password
       change_password_explanation: If you want to change the user´s password write here the new one.<br />Otherwise, let them unchanged.      
       admin_user: This user is a site admin
+      states:
+        passive: New
+        pending: Pending activation
+        active: Active
+        suspended: Suspended
+        deleted: Deleted
+        actions:
+          register: Register
+          activate: Activate
+          suspend: Suspend
+          delete: Delete
+          unsuspend: Unsuspend
     user:
       sign_up: Thanks for signing up!
       sign_up_completed: Signup complete!
