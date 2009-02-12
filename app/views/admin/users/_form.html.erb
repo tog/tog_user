@@ -16,13 +16,13 @@
         <br />
         <span class="helpinfo"><%=I18n.t("tog_user.model.change_password_explanation")%></span>
       </td>
-  </tr>     
+  </tr>
   <tr>
       <th scope="row"></th>
       <td nowrap="nowrap">
         <%= f.check_box :admin %> <%=I18n.t("tog_user.model.admin_user")%>
-      </td>      
-  </tr>           
+      </td>
+  </tr>
 </tbody></table>
 <table class="tableE">
   <caption><%= I18n.t("tog_user.admin.personal_details") %></caption>
@@ -36,8 +36,8 @@
       <td nowrap="nowrap">
         <strong class="highlight"><%= I18n.t("tog_user.model.states.#{@user.current_state}") %></strong>
         <br/>
-        <%=I18n.t("tog_user.admin.change")%>:
-        <%= select_tag "state_event", options_for_select( ( @user.next_events_for_current_state.collect{ |x| [ I18n.t("tog_user.model.states.actions.#{x}"), x ] } ).insert(0, [ "No", '' ]), @user.new_record? ? :passive : @user.current_state ) %>
+        <%= I18n.t("tog_user.admin.change") %>:
+        <%= select_state_tag(@user) %>
       </td>
-  </tr>        
+  </tr>
 </tbody></table>
