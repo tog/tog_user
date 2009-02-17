@@ -1,5 +1,8 @@
 Edge
 ----
+
+0.4.2
+----
 * Ticket #130. Update i18n for user's states
 * Ticket #118. i18n in navigation tabs
 * Fixed a nasty bug on password reminder mailer introduced by a nasty bug on restful_autenthicated introduced by ... [#121 state:resolved]

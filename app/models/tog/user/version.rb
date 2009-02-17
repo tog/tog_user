@@ -1,7 +1,7 @@
 module Version
   MAJOR = 0
   MINOR = 4
-  TINY  = 0
+  TINY  = 2
   MODULE = "tog_user"
   STRING = [MAJOR, MINOR, TINY].join('.')
 
