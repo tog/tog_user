@@ -36,7 +36,7 @@ es:
           delete: Eliminar
           unsuspend: Reactivar    
     user:
-      sign_up: Gracias por darte de alta!
+      sign_up: Gracias por darte de alta!. En breve recibirás un email con instrucciones para confirmar tu cuenta.
       sign_up_completed: Alta completa
       activation_resent: Hemos reenviado el mensaje de activación. Por favor, sigue las instrucciones detalladas en él.
       password_updated: Contraseña actualizada con éxitio para {{email}}

@@ -36,7 +36,7 @@ en:
           delete: Delete
           unsuspend: Unsuspend
     user:
-      sign_up: Thanks for signing up!
+      sign_up: Thanks for signing up!. We have sended to you an email with instructions to activate your account.
       sign_up_completed: Signup complete!
       activation_resent: We have resend the activation message. Please, follow the instructions detailed in it.
       password_updated: Password successfully updated for {{email}}
