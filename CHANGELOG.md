@@ -1,6 +1,9 @@
 Edge
 ----
 
+0.4.3
+----
+
 0.4.2
 ----
 * Ticket #130. Update i18n for user's states
