@@ -26,8 +26,8 @@
     <tr<%= cycle(' class="pair"','') -%>>
       <td><strong><%= link_to user.login, edit_admin_user_url(user), {:title => I18n.t("tog_user.admin.edit_user")} -%></strong></td>
       <td><%= mail_to user.email, user.email, {:title => I18n.t("tog_user.admin.send_email")} -%></td>
-      <td><%= user.state -%></td>
-      <td><%= user.created_at -%></td>
+      <td><%= I18n.t("tog_user.model.states.#{user.current_state}") %></td>
+      <td><%= I18n.l(user.created_at, :format => :short) -%></td>
     </tr>
     <% end %>
   </tbody>
