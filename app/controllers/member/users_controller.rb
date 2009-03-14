@@ -9,16 +9,16 @@ class Member::UsersController < Member::BaseController
         current_user.password_confirmation = params[:password_confirmation]
         current_user.password = params[:password]
         if current_user.save
-          flash[:ok] = "Password changed"
+          flash[:ok] = I18n.t("tog_user.member.password.changed")
         else
-          flash[:error] = "Password not changed"
+          flash[:error] = I18n.t("tog_user.member.password.not_changed")
         end
       else
-        flash[:error] = "New password mismatch. Please, confirm that you entered the same in 'password' and 'password confirmation'"
+        flash[:error] = I18n.t("tog_user.member.password.mismatch")
         @old_password = params[:old_password]
       end
     else
-      flash[:error] = "Wrong password. The current password you introduced is not valid."
+      flash[:error] = I18n.t("tog_user.member.password.invalid")
     end
     redirect_to :action => 'my_account'
   end
@@ -27,7 +27,7 @@ class Member::UsersController < Member::BaseController
     current_user.destroy
     cookies.delete :auth_token
     reset_session
-    flash[:ok] = "Your account has been destroyed. Thank you for using our site."
+    flash[:ok] = I18n.t("tog_user.member.account.removed")
     redirect_back_or_default('/')
   end
 

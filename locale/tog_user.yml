@@ -65,6 +65,14 @@ en:
       login_details: Login details
       personal_details: Personal information
       change: Change
+    member:
+      password:
+        changed: Password changed
+        not_changed: Password not changed
+        mismatch: "New password mismatch. Please, confirm that you entered the same in 'password' and 'password confirmation'"
+        invalid: Wrong password. The current password you introduced is not valid.
+      account:
+        removed: Your account has been removed. Thank you for using our site.
     mailer: 
       account_activated: Your account has been activated!
       activate_account: Please activate your account

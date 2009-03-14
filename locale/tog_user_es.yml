@@ -64,7 +64,15 @@ es:
       create_account: Crear cuenta
       login_details: Datos de acceso  
       personal_details: Información personal
-      change: Cambiar                    
+      change: Cambiar   
+    member:
+      password:
+        changed: Contraseña cambiada
+        not_changed: Contraseña no cambiada
+        mismatch: "Las contraseñas no coinciden. Por favor, confirme que intrdujo lo mismo en 'contraseña' y 'confirmación de contraseña'"
+        invalid: Contraseña incorrecta. La contraseña actual que introdujo no es correcta.
+      account:
+        removed: Su cuenta ha sido eliminada, gracias por usar nuestro sitio.
     mailer: 
       account_activated: Tu cuenta ha sido activada!
       activate_account: Por favor activa tu cuenta
