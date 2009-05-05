@@ -9,7 +9,7 @@ module UserHelper
 
     options = events.insert(0, [ "", '' ])
 
-    select_tag("state_event", options_for_select(options, default_state))
+    select_tag("state_event", options_for_select(options.uniq, default_state))
   end
 
 end
