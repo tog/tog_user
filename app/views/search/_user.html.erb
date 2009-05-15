@@ -2,7 +2,7 @@
 
 <div class="portlet_content">
     <ul>
-        <li><%= link_to 'Send a private message', member_new_message_to_path(match) %></li>
+        <li><%= link_to <%= I18n.t('tog_user.search.user.send_private_message') %>, member_new_message_to_path(match) %></li>
         <li><%= report_abuse_link match %></li>
         <li><%= following_options(match.profile) %></li>
     </ul>

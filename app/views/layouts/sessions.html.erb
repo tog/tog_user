@@ -48,16 +48,7 @@
                 <h1 id="logo"><a href="/"><img src="/tog_core/images/template/logo.gif" alt="toginstallation.com" /></a></h1>
 
                 <div id="header_options">
-                    <ul>
-                        <%if logged_in? -%>
-                          <li>Hello <%= current_user.login %></li>
-                          <li><%= link_to 'My info', member_dashboard_path %></li>
-                          <li class="last"><a href="/logout">Log-out</a></li>
-                        <%else -%>
-                          <li><a href="/signup">Sign up</a></li>
-                          <li class="last"><a href="/login">Log-in</a></li>
-                        <%end -%>
-                    </ul>
+                    <%= render :partial => "shared/header_options" %>
                 </div> <!-- /#header_options -->
 
 

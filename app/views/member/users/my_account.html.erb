@@ -1,41 +1,41 @@
-<div class="titleB">Change password</div>
+<div class="titleB"><%= I18n.t('tog_user.member.password.change') %></div>
 <br/>
 <%= form_tag member_change_password_path %>
   <fieldset>
     <div class="fields">
       <p>
-        <label for="old_password">Current Password</label>
+        <label for="old_password"><%= I18n.t('tog_user.member.password.current') %></label>
         <%= password_field_tag 'old_password', @old_password, :class => "fieldbox" %>
       </p>
       <p>
-        <label for="password">New password</label>
+        <label for="password"><%= I18n.t('tog_user.member.password.new') %></label>
         <%= password_field_tag 'password', nil, :class => "fieldbox"  %>
       </p>
       <p>
-        <label for="password_confirmation">Confirm new password</label>
+        <label for="password_confirmation"><%= I18n.t('tog_user.member.password.confirm_new') %></label>
         <%= password_field_tag 'password_confirmation', nil, :class => "fieldbox" %>
       </p>
     </div>
     <div class="actions">
-      <%= submit_tag 'Change', :class => "button mainaction" %>
+      <%= submit_tag I18n.t('tog_user.member.password.change'), :class => "button mainaction" %>
     </div>
   </fieldset>
 </form>
 <br/>
 <hr/>
 <br/>
-<div class="titleB">Remove account</div>
+<div class="titleB"><%= I18n.t('tog_user.member.account.remove') %></div>
 <p>
-    <span class="fontsmaller"><%= link_to 'destroy my account and all my data', member_destroy_account_path, :confirm => 'We are going to remove your account and all your data. Are you sure?', :method => :delete %></span>
+    <span class="fontsmaller"><%= link_to I18n.t('tog_user.member.account.destroy_all'), member_destroy_account_path, :confirm => I18n.t('tog_user.member.account.destroy_all_confirm'), :method => :delete %></span>
 </p>
 
 
 <% content_for :sidebar do %>
   <div class="portlet portletD" id="portlet_userWall">
-      <h2><span>My account info</span></h2>
+      <h2><span></span><%= I18n.t('tog_user.member.account.my_info') %></h2>
       <div class="portlet_content">
-        <strong>My Login:</strong> <%= @user.login %><br/>
-        <strong>My Email:</strong> <%= @user.email %><br/>
+        <strong><%= I18n.t('tog_user.member.account.my_login') %>:</strong> <%= @user.login %><br/>
+        <strong><%= I18n.t('tog_user.member.account.my_email') %>:</strong> <%= @user.email %><br/>
       </div>
   </div>
 <% end %>

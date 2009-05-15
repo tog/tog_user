@@ -7,6 +7,7 @@ en:
   tog_user:
     plugin_name: User
     plugin_title: User management
+    send: Send
     model: 
       login_required: . Field ''login'' is mandatory
       email_required: . Field ''email'' is mandatory
@@ -16,7 +17,9 @@ en:
       login_in_use: . Login already in use
       email_in_use: . Email already in use
       name: Name
+      login: Login
       email: Email
+      your_email: Your email address
       state: State
       created_at: Created at
       password: Password
@@ -42,9 +45,18 @@ en:
       password_updated: Password successfully updated for {{email}}
       password_reset_sent: We have send an email with instructions to reset your password to {{email}}
       password_reset_not_found: The {{email}} doesn''t have an account in this system
+      forgot_password: Forgot your password?
+      forgot_password_help: After sending this form, you will receive an email with instructions for reseting your password.
+      already_registered: Already Registered?
+      signup_title: Signup
+      click_to_login: Click here to login
+      type_two_words: Type the two words
+    search:
+      send_private_message: Send private message
     sessions:
       email: Email
       login: Login
+      new: Login
       password: Password
       remember_me: Remember me
       password_forgotten: If you've forgotten your password, we can
@@ -52,6 +64,9 @@ en:
       login_failure: Incorrect username or password.
       login_success: Logged in successfully.
       sign_out: You are now signed out.
+      create_account: Create Your Account
+      click_to_sign_up: Click here to sign up
+      sign_in: Sign in
     admin:
       error_saving: Some error prohibited to save this user
       user_created: User {{login}} created successfully!
@@ -69,9 +84,21 @@ en:
       password:
         changed: Password changed
         not_changed: Password not changed
+        change: Change Password
+        reset: Reset Password
+        reset_help: Enter your new password.
+        current: Current Password
+        new: New Password
+        confirm_new: Confirm New Password
         mismatch: "New password mismatch. Please, confirm that you entered the same in 'password' and 'password confirmation'"
         invalid: Wrong password. The current password you introduced is not valid.
       account:
+        my_info: My Account Info
+        my_login: My Login
+        my_email: My Email
+        remove: Remove Account
+        destroy_all: destroy my account and all my data
+        destroy_all_confirm: We are going to remove your account and all your data. Are you sure?
         removed: Your account has been removed. Thank you for using our site.
     mailer: 
       account_activated: Your account has been activated!

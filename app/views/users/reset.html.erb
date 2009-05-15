@@ -1,6 +1,6 @@
-<div class="titleB">Change your password</div>
+<div class="titleB"><%= I18n.t('tog_user.member.password.reset') %></div>
 <p>
-    <span class="fontsmaller">Enter your new password.</span>
+    <span class="fontsmaller"><%= I18n.t('tog_user.member.password.reset_help') %></span>
 </p>
 <br/>
 
@@ -9,17 +9,17 @@
 <fieldset>
   <div class="fields">
     <p>
-      <label for="user_password">New password</label>
+      <label for="user_password"><%= I18n.t('tog_user.member.password.new') %></label>
       <%= f.password_field :password, :class => "fieldbox", :size => "40" %>
     </p>
     
     <p>
-      <label for="user_password_confirmation">Repeat your new password</label>
+      <label for="user_password_confirmation"><%= I18n.t('tog_user.member.password.confirm_new') %></label>
       <%= f.password_field :password_confirmation, :class => "fieldbox", :size => "40" %>
     </p>
     
     <div class="actions">
-      <%= submit_tag 'Reset', :class => "button mainaction" %>
+      <%= submit_tag I18n.t('tog_user.member.password.reset'), :class => "button mainaction" %>
     </div>
   </div>
 </fieldset>
