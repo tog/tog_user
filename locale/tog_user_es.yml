@@ -7,6 +7,7 @@ es:
   tog_user:
     plugin_name: User    
     plugin_title: Gestión de usuarios
+    send: Enviar
     model: 
       login_required: . El campo ''login'' es obligatorio
       email_required: . El campo ''email'' es obligatorio
@@ -16,7 +17,9 @@ es:
       login_in_use: . Usuario ya existe
       email_in_use: . Correo electrónico en uso
       name: Nombre
+      login: Login
       email: Correo electrónico
+      your_email: Tu correo electrónico
       state: Estado
       created_at: Creado el
       password: Contraseña
@@ -42,7 +45,16 @@ es:
       password_updated: Contraseña actualizada con éxitio para {{email}}
       password_reset_sent: Hemos enviado un correo a {{email}} con instrucciones para cambiar tu contraseña.
       password_reset_not_found: El {{email}} no tiene cuenta en este sistema
+      forgot_password: ¿Has olvidado tu contraseña?
+      forgot_password_help: Tras rellenar este formulario, recibirás un correo electrónico con instrucciones para cambiar tu contraseña.
+      already_registered: ¿Ya estás registrado?
+      signup_title: Regístrate
+      click_to_login: Pulsa aquí para entrar
+      type_two_words: Escribe las 2 palabras
+    search:
+      send_private_message: Enviar un mensaje privado
     sessions:
+      new: Entra en tu cuenta
       email: Correo electrónico
       login: Usuario
       password: Contraseña
@@ -52,6 +64,9 @@ es:
       login_failure: Usuario o contraseña incorrectos.
       login_success: Autenticado correctamente.
       sign_out: Has abandonado la sesión.
+      create_account: Regístrate
+      click_to_sign_up: Pulsa aquí para registrarte
+      sign_in: Registrarse
     admin:
       error_saving: Ha sucedido algo que no permite grabar este usuario
       user_created: Usuario {{login}} creado correctamente!
@@ -69,9 +84,21 @@ es:
       password:
         changed: Contraseña cambiada
         not_changed: Contraseña no cambiada
+        change: Cambiar contraseña
+        reset: Resetear la contraseña
+        reset_help: Introduce tu nueva contraseña
+        current: Contraseña actual
+        new: Nueva contraseña
+        confirm_new: Confirma la nueva contraseña
         mismatch: "Las contraseñas no coinciden. Por favor, confirme que intrdujo lo mismo en 'contraseña' y 'confirmación de contraseña'"
         invalid: Contraseña incorrecta. La contraseña actual que introdujo no es correcta.
       account:
+        my_info: Mi cuenta
+        my_login: Mi Login
+        my_email: Mi Email
+        remove: Borrar cuenta
+        destroy_all: borrar mi cuenta y todos mis datos
+        destroy_all_confirm: Vamos a borrar tu cueenta y borrar todos tus datos. ¿Estás seguro?
         removed: Su cuenta ha sido eliminada, gracias por usar nuestro sitio.
     mailer: 
       account_activated: Tu cuenta ha sido activada!
