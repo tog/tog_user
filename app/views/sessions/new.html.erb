@@ -8,7 +8,7 @@
   <fieldset>
     <div class="fields">
       <p>
-        <% if Tog::Config["system.user.email_as_login"] %>
+        <% if Tog::Config["plugins.tog_user.email_as_login"] %>
         <label for="login"><%= I18n.t("tog_user.sessions.email") %></label>
         <% else %>
         <label for="login"><%= I18n.t("tog_user.sessions.login") %></label>
