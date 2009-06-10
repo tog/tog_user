@@ -19,7 +19,6 @@ require "acts_as_state_machine_patch"
 Tog::Plugins.helpers UserHelper
 
 Tog::Search.sources << "User"
-Tog::Plugins.observers << :user_observer
 
 Tog::Interface.sections(:admin).add "Users", "/admin/users"
 Tog::Interface.sections(:member).add "My account", "/member/account"

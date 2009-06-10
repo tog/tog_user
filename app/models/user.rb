@@ -17,6 +17,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :login, :case_sensitive => false, :message => I18n.t("tog_user.model.login_in_use")
   validates_uniqueness_of   :email, :case_sensitive => false, :message => I18n.t("tog_user.model.email_in_use")
   before_save :encrypt_password  
+
+  after_create :send_activation_request
+  after_save :send_activation_or_reset_mail
   
   named_scope :admin, :conditions => {:admin => true}
   named_scope :active, :conditions => {:state => 'active'}
@@ -164,5 +167,13 @@ class User < ActiveRecord::Base
     self.activated_at = Time.now.utc
     self.deleted_at = self.activation_code = nil
   end
-
+  def send_activation_request
+    UserMailer.deliver_signup_notification(self)
+  end
+  
+  def send_activation_or_reset_mail
+    UserMailer.deliver_activation(self) if self.recently_activated?
+    UserMailer.deliver_reset_notification(self) if self.recently_forgot_password?       
+  end
+  
 end
