@@ -4,6 +4,18 @@ Edge
 0.5.0
 ----
 
+* Fixed bug in user authentication when using email for login (kudos to Gaizka)
+* (almost) Full i18n (kudos to Andrei Erdoss)
+* Renamed routes.rb to desert_routes.rb (Rails 2.3 + desert 0.5 support)
+* Small changes to code and test (Rails 2.3 support, kudos to Andrei Erdoss)
+* Renamed application.rb to application_controller.rb (Rails 2.3 support)
+* Small changes to code and test (Rails 2.3 support, kudos to Andrei Erdoss)
+* New named_scope "admin" in user model
+
+
+Fix User.authenticate when Tog::Config["plugins.tog_user.email_as_login"] 
+is set
+
 0.4.4
 ----
 
