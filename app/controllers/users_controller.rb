@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
     if logged_in? && !current_user.active?
       current_user.activate!
+      Activity.report(current_user, :activate)
       flash[:ok] = I18n.t("tog_user.user.sign_up_completed")
     end
     redirect_back_or_default(Tog::Config["plugins.tog_user.default_redirect_on_activation"])

@@ -1,6 +1,6 @@
 Edge
 ----
-
+* Record activity on activate
 * Small fix: "system.user.email_as_login" should be "plugins.tog_user.email_as_login"
 * Translated user_mailer activation and signup emails into spanish
 * Improved spanish translations
