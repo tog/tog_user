@@ -5,10 +5,12 @@
 <table class="tableE">
   <thead>
     <tr>
-      <th scope="col"><%=I18n.t("tog_user.model.name")%></th>
-      <th scope="col"><%=I18n.t("tog_user.model.email")%></th>
-      <th scope="col"><%=I18n.t("tog_user.model.state")%></th>
-      <th scope="col"><%=I18n.t("tog_user.model.created_at")%></th>
+      <% [:login, :email, :state, :created_at].each do |field| %>
+        <th scope="col">
+          <%= link_to_sortable_column_header(field, @order_by, @sort_order,
+                I18n.t("tog_user.model.#{field}")) %>
+        </th>
+      <% end %>
     </tr>
   </thead>
   <tfoot>
@@ -25,10 +27,64 @@
     <% @users.each do |user| %>
     <tr<%= cycle(' class="pair"','') -%>>
       <td><strong><%= link_to user.login, edit_admin_user_url(user), {:title => I18n.t("tog_user.admin.edit_user")} -%></strong></td>
-      <td><%= mail_to user.email, user.email, {:title => I18n.t("tog_user.admin.send_email")} -%></td>
+      <td nowrap="nowrap"><%= mail_to user.email, user.email, {:title => I18n.t("tog_user.admin.send_email")} -%></td>
       <td><%= I18n.t("tog_user.model.states.#{user.current_state}") %></td>
-      <td><%= I18n.l(user.created_at, :format => :short) -%></td>
+      <td nowrap="nowrap"><%= I18n.l(user.created_at, :format => :long) -%></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<% content_for :sidebar do %>
+  <div id="portlet_search_user" class="portlet portletD">
+    <h2>
+      <span>
+        <%= I18n.t("tog_user.admin.search_user") %>... 
+      </span>
+    </h2>
+    <div class="portlet_content">
+      <% form_tag(admin_users_path, :method => :get) do %>
+        <%= text_field_tag :search_term, params[:search_term], :size => 22 %>
+        <%= submit_tag " > " %>
+      <% end %>      
+      <small>
+        <%= I18n.t("tog_user.admin.search_user_info") %>
+      </small>
+    </div>    
+  </div>
+
+  <br/> 
+  <div class="portlet portletE" id="portlet_userFilter">
+    <h2>
+      <span>
+        <%= I18n.t("tog_user.admin.filter_users") %>
+      </span>
+    </h2>
+    <div class="portlet_content">
+      <ul>
+        <li>
+          <ul>
+            <li><%= link_to I18n.t("tog_user.admin.filter_all"), admin_users_path(:search_term => params[:search_term])%></li>
+          </ul>
+        </li>
+        <li>
+          <%= I18n.t("tog_user.admin.age_filter") %>
+          <ul>
+            <% [:today, :week, :month].each do |age| %>
+              <%= filter_item(:age, age, I18n.t("tog_user.admin.age_filter_fields.#{age}")) %> 
+            <% end %>
+          </ul>
+        </li>
+        <li>
+          <%= I18n.t("tog_user.admin.user_state_filter") %>
+          <ul>
+            <% [:passive, :pending, :active, :suspended, :deleted].each do |state| %>
+              <%= filter_item(:state, state, I18n.t("tog_user.admin.user_state_filter_fields.#{state}")) %>
+            <% end %>
+          </ul>        
+        </li>
+      </ul>
+    </div>    
+  </div> 
+  <br/>  
+<% end %>

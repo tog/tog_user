@@ -80,6 +80,23 @@ es:
       login_details: Datos de acceso  
       personal_details: Información personal
       change: Cambiar   
+      search_user: Buscar usuario
+      search_user_info: Busca en nombre y correo electrónico
+      search: Buscar
+      filter_users: Filtrar usuario
+      filter_all: Eliminar filtros
+      age_filter: Fecha de creación
+      age_filter_fields:
+        today: Hoy
+        week: Última semana
+        month: Último mes
+      user_state_filter: Estado 
+      user_state_filter_fields:
+        active: Activos
+        pending: Pendientes de activación
+        suspended: Suspendidos
+        deleted: Eliminados
+        passive: Nuevos        
     member:
       password:
         changed: Contraseña cambiada

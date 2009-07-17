@@ -70,4 +70,22 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  context "Users" do
+    setup do 
+      User.destroy_all
+      now = Time.now
+      @user1 = Factory(:user, :login => 'user1', 
+                              :email => 'user1@server.org',
+                              :created_at => now)
+      @user1.activate!                            
+      @user2 = Factory(:user, :login => 'user2', 
+                              :email => 'user2@server.org',
+                              :created_at => now - 2.days)
+      @user2.activate!
+      @user2.suspend!                            
+      @user3 = Factory(:user, :login => 'user3', 
+                              :email => 'user3@otherserver.org',
+                              :created_at => now - 15.days)
+    end
+  end
 end

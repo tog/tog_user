@@ -16,7 +16,7 @@ Tog::Plugins.settings :tog_user,  :captcha_enabled                  => false,
 
 require "acts_as_state_machine_patch"
 
-Tog::Plugins.helpers UserHelper
+Tog::Plugins.helpers UserHelper, Admin::UserHelper
 
 Tog::Search.sources << "User"
 

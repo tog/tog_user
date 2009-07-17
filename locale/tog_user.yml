@@ -80,6 +80,23 @@ en:
       login_details: Login details
       personal_details: Personal information
       change: Change
+      search_user: Search user
+      search_user_info: Search in name and email
+      search: Search
+      filter_users: Filter users
+      filter_all: Remove filters
+      age_filter: Creation date
+      age_filter_fields:
+        today: Today
+        week: Last week
+        month: Last month
+      user_state_filter: State 
+      user_state_filter_fields:
+        active: Active
+        pending: Pending
+        suspended: Suspended
+        deleted: Deleted
+        passive: Passive
     member:
       password:
         changed: Password changed
