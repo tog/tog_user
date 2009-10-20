@@ -34,12 +34,18 @@ class UsersController < ApplicationController
   
   def activate
     self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
-    if logged_in? && !current_user.active?
-      current_user.activate!
-      Activity.report(current_user, :activate)
-      flash[:ok] = I18n.t("tog_user.user.sign_up_completed")
+    case
+      when (!params[:activation_code].blank?) && logged_in? && !current_user.active?
+        current_user.activate!
+        flash[:notice] = I18n.t("tog_user.user.sign_up_completed")
+        redirect_back_or_default(Tog::Config["plugins.tog_user.default_redirect_on_activation"])
+      when params[:activation_code].blank?
+        flash[:error] = I18n.t("tog_user.user.activate_code_missing")
+        redirect_back_or_default('/')
+      else
+        flash[:error] = I18n.t("tog_user.user.activation_code_bogus")
+        redirect_back_or_default('/')
     end
-    redirect_back_or_default(Tog::Config["plugins.tog_user.default_redirect_on_activation"])
   end
 
   def forgot

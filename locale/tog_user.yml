@@ -42,6 +42,8 @@ en:
       sign_up: Thanks for signing up!. We have sended to you an email with instructions to activate your account.
       sign_up_completed: Signup complete!
       activation_resent: We have resend the activation message. Please, follow the instructions detailed in it.
+      activation_code_bogus: We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in.
+      activation_code_missing: The activation code was missing.  Please follow the URL from your email.
       password_updated: Password successfully updated for {{email}}
       password_reset_sent: We have send an email with instructions to reset your password to {{email}}
       password_reset_not_found: The {{email}} doesn''t have an account in this system

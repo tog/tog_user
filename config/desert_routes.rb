@@ -12,8 +12,10 @@ signup   '/signup',   :controller => 'users',    :action => 'new'
 forgot   '/forgot',   :controller => 'users',    :action => 'forgot'
 denied   '/denied',   :controller => 'authorization',    :action => 'denied'
 reset    '/reset/:reset_code',          :controller => 'users', :action => 'reset'
+activate '/activate', :controller => 'users', :action => 'activate'
 activate '/activate/:activation_code',  :controller => 'users', :action => 'activate'
 resend_activation '/resend_activation', :controller => 'users', :action => 'resend_activation'
+
 
 namespace(:admin) do |admin| 
   admin.resources :users
