@@ -1,6 +1,8 @@
 Edge
 ----
 
+* Added failing cases in the activation process (kudos to pacoguzman)
+
 0.5.4
 ----
 
