@@ -1,6 +1,6 @@
 <div class="titleB"><%= I18n.t('tog_user.user.forgot_password') %></div>
 <p>
-    <span class="fontsmaller"><%= I18n.t('tog_user.user.forgot_password_help') %></span>  
+    <span class="fontsmaller"><%= I18n.t('tog_user.user.forgot_password_help') %></span>
 </p>
 
 
@@ -9,7 +9,7 @@
    <% form_for :user, :url => forgot_path, :html => {:id => "f_signup", :name => "f_signup" } do |f| -%>
     <fieldset>
      <p>
-       <label for="email"><%= I18n.t('tog_user.model.your_email') %></label>
+       <%= f.label :email,I18n.t('tog_user.model.your_email') %>
        <%= f.text_field :email, :class => "fieldbox", :size => "74" %>
      </p>
     </fieldset>

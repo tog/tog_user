@@ -10,23 +10,23 @@
     <div class="fields">
       <p>
           <% unless config["plugins.tog_user.email_as_login"] %>
-            <label for="login"><%= I18n.t('tog_user.model.login') %></label>
+            <%= f.label :login, I18n.t('tog_user.model.login') %>
             <%= f.text_field :login, :class => "fieldbox", :size => "40" %>
           <% end %>
       </p>
 
       <p>
-        <label for="email"><%= I18n.t('tog_user.model.email') %></label>
+        <%= f.label :email, I18n.t('tog_user.model.email') %>
         <%= f.text_field :email, :class => "fieldbox", :size => "40" %>
       </p>
 
       <p>
-        <label for="pass"><%= I18n.t('tog_user.model.password') %></label>
+        <%= f.label :password, I18n.t('tog_user.model.password') %>
         <%= f.password_field :password, :class => "fieldbox", :size => "40" %>
       </p>
 
       <p>
-        <label for="repass"><%= I18n.t('tog_user.model.password_confirmation') %></label>
+        <%= f.label :password_confirmation, I18n.t('tog_user.model.password_confirmation') %>
         <%= f.password_field :password_confirmation, :class => "fieldbox", :size => "40" %>
       </p>  
 
