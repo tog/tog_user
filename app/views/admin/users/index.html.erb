@@ -28,7 +28,7 @@
     <tr<%= cycle(' class="pair"','') -%>>
       <td><strong><%= link_to user.login, edit_admin_user_url(user), {:title => I18n.t("tog_user.admin.edit_user")} -%></strong></td>
       <td nowrap="nowrap"><%= mail_to user.email, user.email, {:title => I18n.t("tog_user.admin.send_email")} -%></td>
-      <td><%= I18n.t("tog_user.model.states.#{user.current_state}") %></td>
+      <td><%= I18n.t("tog_user.model.states.#{user.aasm_current_state}") %></td>
       <td nowrap="nowrap"><%= I18n.l(user.created_at, :format => :long) -%></td>
     </tr>
     <% end %>

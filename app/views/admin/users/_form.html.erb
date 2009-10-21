@@ -34,7 +34,7 @@
   <tr>
       <th scope="row"><%=I18n.t("tog_user.model.state")%></th>
       <td nowrap="nowrap">
-        <strong class="highlight"><%= I18n.t("tog_user.model.states.#{@user.current_state}") %></strong>
+        <strong class="highlight"><%= I18n.t("tog_user.model.states.#{@user.aasm_current_state}") %></strong>
         <br/>
         <%= I18n.t("tog_user.admin.change") %>:
         <%= select_state_tag(@user) %>
