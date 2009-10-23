@@ -70,7 +70,7 @@ en:
       click_to_sign_up: Click here to sign up
       sign_in: Sign in
     admin:
-      error_saving: Some error prohibited to save this user
+      error_saving: An error prevented us from saving this user
       user_created: User {{login}} created successfully!
       user_updated: User {{login}} updated successfully!
       create_user: Create user
