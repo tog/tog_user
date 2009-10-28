@@ -100,14 +100,12 @@ class User < ActiveRecord::Base
 
     def send_activation_or_reset_mail
       UserMailer.deliver_activation(self) if self.recently_activated?
+      Activity.report(self, :activate, self) if self.recently_activated?
       UserMailer.deliver_reset_notification(self) if self.recently_forgot_password?       
     end
 
 end
 
-
-  # Virtual attribute for the unencrypted password
-#  attr_accessor :password
 
   # validates_presence_of     :login, :message => I18n.t("tog_user.model.login_required")
   # validates_presence_of     :email, :message => I18n.t("tog_user.model.email_required")
@@ -119,4 +117,3 @@ end
   # validates_length_of       :email,    :within => 3..100
   # validates_uniqueness_of   :login, :case_sensitive => false, :message => I18n.t("tog_user.model.login_in_use")
   # validates_uniqueness_of   :email, :case_sensitive => false, :message => I18n.t("tog_user.model.email_in_use")
-#  before_save :encrypt_password  

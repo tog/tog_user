@@ -24,11 +24,15 @@ class UserTest < ActiveSupport::TestCase
         end
       end
       
-      context "that activates his acount" do
+      context "and activates his acount" do
         setup do
           @chavez.activate!
         end
 
+        should "report activity" do
+          assert_not_nil Activity.by_user(@chavez).find_by_action('activate')
+        end
+        
         should "be in state active" do
           assert @chavez.state, "active"
         end
