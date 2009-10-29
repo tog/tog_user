@@ -1,0 +1,123 @@
+pt-BR:
+  interface:
+    admin:
+      users: Usuários
+    member:
+      my_account: Minha conta
+  tog_user:
+    plugin_name: User
+    plugin_title: Gerenciamento de usuário
+    send: Enviar
+    model: 
+      login_required: . Campo ''login'' é obrigatório
+      email_required: . Campo ''email'' é obrigatório
+      password_required: . Campo ''password'' é obrigatório
+      password_mismatch: . A senha e sua confirmação devem ser iguais
+      login_to_short: . Login deve ter pelo menos 3 caracteres
+      login_in_use: . Login já está sendo usado
+      email_in_use: . Email já está sendo usado
+      name: Nome
+      login: Login
+      email: Email
+      your_email: Seu endereço de email
+      state: Estado
+      created_at: Criado em
+      password: Senha
+      password_confirmation: Confirmação de senha
+      change_password_explanation: If you want to change the user´s password write here the new one.<br />Otherwise, let them unchanged.      
+      admin_user: Esse usuário é um administrador do site
+      states:
+        passive: Novo
+        pending: Ativação pendente
+        active: Ativo
+        suspended: Suspenso
+        deleted: Apagado
+        actions:
+          register: Registrar
+          activate: Ativar
+          suspend: Suspender
+          delete: Apagar
+          unsuspend: :Desuspender
+    user:
+      sign_up: Obrigado por se inscrever! Enviamos um email para você com as instruções para ativar sua conta.
+      sign_up_completed: Cadastro completo!
+      activation_resent: "Reenviamos o email de ativação da conta. Por favor, siga as instruções desse email."
+      password_updated: Senha atualizada com sucesso para {{email}}
+      password_reset_sent: Enviamos um email com instruções para recuperar sua senha para {{email}}
+      password_reset_not_found: "O email {{email}} não tem uma conta nesse sistema"
+      forgot_password: Esqueceu sua senha?
+      forgot_password_help: "Após enviar esse formulário, você receberá um email com as instruções de recuperação da sua senha."
+      already_registered: Já se registrou?
+      signup_title: Registrar-se
+      click_to_login: Clique aqui para entrar
+      type_two_words: Escreva as duas palavras
+    search:
+      send_private_message: Enviar uma mensagem particular
+    sessions:
+      email: Email
+      login: Login
+      new: Login
+      password: Senha
+      remember_me: Lembrar de mim
+      password_forgotten: "Se esqueceu sua senha, podemos"
+      email_you: enviá-la por email para você
+      login_failure: Usuário e senha incorretos
+      login_success: Sucesso ao entrar
+      sign_out: Você saiu do sistema
+      create_account: Criar sua conta
+      click_to_sign_up: Clique aqui para se registrar
+      sign_in: Entrar
+    admin:
+      error_saving: Alguns erros impedem salvar esse usuário
+      user_created: Usuário {{login}} criado com sucesso!
+      user_updated: Usuário {{login}} atualizado com sucesso!
+      create_user: Criar usuário
+      edit_user: Editar usuário
+      email_user: Enviar um email para esse usuário
+      update: Atualizar
+      create: Criar
+      create_account: Criar conta
+      login_details: Detalhes do login
+      personal_details: Informação pessoal
+      change: Alterar
+      search_user: Procurar usuário
+      search_user_info: Buscar nome e email
+      search: Buscar
+      filter_users: Filtrar usuários
+      filter_all: Remover filtros
+      age_filter: Data de criação
+      age_filter_fields:
+        today: Hoje
+        week: Última semana
+        month: Último mês
+      user_state_filter: Estado
+      user_state_filter_fields:
+        active: Ativo
+        pending: Pendente
+        suspended: Suspenso
+        deleted: Apagado
+        passive: Passivo
+    member:
+      password:
+        changed: Senha alterada
+        not_changed: Senha não alterada
+        change: Trocar senha
+        reset: Recuperar senha
+        reset_help: Diga sua nova senha
+        current: Senha atual
+        new: Nova senha
+        confirm_new: Confirmar nova senha
+        mismatch: "Nova senha incompatível. Por favor, verifique se você escreveu a mesma em 'senha' e 'confirmação de senha'"
+        invalid: Senha inválida. A senha atual informada não é válida.
+      account:
+        my_info: Informações da minha conta
+        my_login: Meu login
+        my_email: Meu email
+        remove: Apagar conta
+        destroy_all: Destruir minha conta e apagar todos os meus dados
+        destroy_all_confirm: Vamos remover sua conta e todos os seus dados. Tem certeza?
+        removed: Sua conta foi removida. Obrigado por usar nosso site.
+    mailer: 
+      account_activated: Sua conta foi ativada!
+      activate_account: Por favor ative sua conta
+      reset_password: Recuperar sua senha
