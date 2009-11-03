@@ -24,7 +24,7 @@ pt-BR:
       created_at: Criado em
       password: Senha
       password_confirmation: Confirmação de senha
-      change_password_explanation: If you want to change the user´s password write here the new one.<br />Otherwise, let them unchanged.      
+      change_password_explanation: "Se você quer alterar a senha, digite a nova senha. Caso contrário, deixe em branco."      
       admin_user: Esse usuário é um administrador do site
       states:
         passive: Novo
