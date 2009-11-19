@@ -4,6 +4,7 @@ Edge
 * Added failing cases in the activation process (kudos to pacoguzman)
 * Migrated to newer version of restful_authentication and AASM gem. Old password scheme used for compatibility
 * Filtering passwords
+* Added translations for Brazilian Portuguese
 
 0.5.4
 ----
