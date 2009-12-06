@@ -1,8 +1,9 @@
 class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
-    @subject     = (@subject || "") + I18n.t("tog_user.mailer.activate_account")
-    @body[:url]  = activate_url(user.activation_code)
+    @subject                = (@subject || "") + I18n.t("tog_user.mailer.activate_account")
+    @body[:url]             = activate_url(user.activation_code)
+    @body[:activation_code] = user.activation_code
   end
 
   def activation(user)
