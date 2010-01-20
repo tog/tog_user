@@ -6,10 +6,12 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
 
-  validates_presence_of     :login
-  validates_length_of       :login,    :within => 3..40
-  validates_uniqueness_of   :login
-  validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message
+  unless Tog::Config["plugins.tog_user.email_as_login"]
+    validates_presence_of     :login
+    validates_length_of       :login,    :within => 3..40
+    validates_uniqueness_of   :login
+    validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message
+  end
 
   validates_presence_of     :email
   validates_length_of       :email,    :within => 6..100 #r@a.wk
