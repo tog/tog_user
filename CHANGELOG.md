@@ -1,6 +1,9 @@
 Edge
 ----
 
+* filter_item method for filtering lists in admin views moved to tog_core
+
+
 0.6.0
 ----
 
